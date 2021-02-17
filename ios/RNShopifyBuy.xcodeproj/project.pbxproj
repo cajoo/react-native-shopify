@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		897881AF25DC78300079E390 /* Fragment+PaymentSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897881AE25DC78300079E390 /* Fragment+PaymentSettings.swift */; };
+		8912B09925DC838700B8E019 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8912B09825DC838700B8E019 /* Client.swift */; };
+		8912B09C25DC848B00B8E019 /* ClientQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8912B09B25DC848B00B8E019 /* ClientQuery.swift */; };
 		897881B425DC78970079E390 /* Fragment+CheckoutQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897881B325DC78970079E390 /* Fragment+CheckoutQuery.swift */; };
 		897881E825DC798D0079E390 /* Fragment+DiscountAllocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897881E725DC798D0079E390 /* Fragment+DiscountAllocation.swift */; };
 		897881EB25DC79D40079E390 /* Fragment+DiscountApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897881EA25DC79D40079E390 /* Fragment+DiscountApplication.swift */; };
@@ -29,7 +30,8 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNShopifyBuy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNShopifyBuy.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		897881AE25DC78300079E390 /* Fragment+PaymentSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fragment+PaymentSettings.swift"; sourceTree = "<group>"; };
+		8912B09825DC838700B8E019 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		8912B09B25DC848B00B8E019 /* ClientQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientQuery.swift; sourceTree = "<group>"; };
 		897881B325DC78970079E390 /* Fragment+CheckoutQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fragment+CheckoutQuery.swift"; sourceTree = "<group>"; };
 		897881E725DC798D0079E390 /* Fragment+DiscountAllocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fragment+DiscountAllocation.swift"; sourceTree = "<group>"; };
 		897881EA25DC79D40079E390 /* Fragment+DiscountApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fragment+DiscountApplication.swift"; sourceTree = "<group>"; };
@@ -60,6 +62,8 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				8912B09B25DC848B00B8E019 /* ClientQuery.swift */,
+				8912B09825DC838700B8E019 /* Client.swift */,
 				897881AD25DC78000079E390 /* Storefront */,
 				89D3C97625DC345C00E9D462 /* RNShopifyBuy.swift */,
 				89D3C97725DC345C00E9D462 /* RNShopifyBuyManager.m */,
@@ -71,7 +75,6 @@
 		897881AD25DC78000079E390 /* Storefront */ = {
 			isa = PBXGroup;
 			children = (
-				897881AE25DC78300079E390 /* Fragment+PaymentSettings.swift */,
 				897881B325DC78970079E390 /* Fragment+CheckoutQuery.swift */,
 				897881E725DC798D0079E390 /* Fragment+DiscountAllocation.swift */,
 				897881EA25DC79D40079E390 /* Fragment+DiscountApplication.swift */,
@@ -138,9 +141,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				89D3C97825DC345C00E9D462 /* RNShopifyBuy.swift in Sources */,
+				8912B09C25DC848B00B8E019 /* ClientQuery.swift in Sources */,
+				8912B09925DC838700B8E019 /* Client.swift in Sources */,
 				89D3C97925DC345C00E9D462 /* RNShopifyBuyManager.m in Sources */,
 				897881B425DC78970079E390 /* Fragment+CheckoutQuery.swift in Sources */,
-				897881AF25DC78300079E390 /* Fragment+PaymentSettings.swift in Sources */,
 				897881E825DC798D0079E390 /* Fragment+DiscountAllocation.swift in Sources */,
 				897881EB25DC79D40079E390 /* Fragment+DiscountApplication.swift in Sources */,
 			);

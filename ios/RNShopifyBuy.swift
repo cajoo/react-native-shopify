@@ -5,9 +5,9 @@
 import MobileBuySDK
 
 @objc(RNShopifyBuy)
-class RNShopifyBuy: NSObject {
+class RNShopifyBuy: NSObject, PaySessionDelegate {
 
-    private var client: Graph.Client? = nil
+    private var client: Client? = nil
     private var paySession: PaySession? = nil
     
     @objc static func requiresMainQueueSetup() -> Bool {
@@ -20,13 +20,13 @@ class RNShopifyBuy: NSObject {
     @objc(initialize:accessTokenParameter:localeParameter:)
     func initialize(_ shopDomain: String, accessToken: String, locale: String) {
         // Create graph client
-        self.client = Graph.Client(shopDomain: shopDomain, apiKey: accessToken, locale: Locale.init(identifier: locale))
+        self.client = Client(shopDomain: shopDomain, accessToken: accessToken, locale: Locale.init(identifier: locale))
     }
     
     /**
      * Check if client has been initialized
      */
-    func useClient(reject: RCTPromiseRejectBlock, callback: (_ client: Graph.Client) -> Void) -> Void {
+    func useClient(reject: RCTPromiseRejectBlock, callback: (_ client: Client) -> Void) -> Void {
         if let client = self.client {
             callback(client)
         } else {
@@ -57,18 +57,10 @@ class RNShopifyBuy: NSObject {
                 expiryYear: cardDictionary["expiryYear"] as! String,
                 verificationCode: cardDictionary["verificationCode"] as? String
             );
-
-            // Create query for payment settings
-            let query = Storefront.buildQuery { $0
-                .shop { $0
-                    .fragmentForPaymentSettings()
-                }
-            }
             
-            // Create task
-            let task = client.queryGraphWith(query) { response, error in
-                if let response = response {
-                    let subtask = cardClient.vault(creditCard, to: response.shop.paymentSettings.cardVaultUrl) { token, error in
+            client.fetchCardVaultUrl { cardVaultUrl in
+                if let cardVaultUrl = cardVaultUrl {
+                    let task = cardClient.vault(creditCard, to: cardVaultUrl) { token, error in
                         if let token = token {
                             resolve(token)
                         } else {
@@ -76,15 +68,57 @@ class RNShopifyBuy: NSObject {
                         }
                     }
                     
-                    subtask.resume()
+                    task.resume()
                 } else {
-                    reject("E_VAULT_URL", "Can't get cardVaultUrl", error)
+                    reject("E_VAULT_URL", "Can't get cardVaultUrl", nil)
                 }
             }
-            
-            // Run task
-            task.resume()
         }
     }
     
+    @objc(applePay:resolver:rejecter:)
+    func applePay(
+        _ checkoutId: String,
+        resolve: @escaping RCTPromiseResolveBlock,
+        reject: @escaping RCTPromiseRejectBlock
+    ) -> Void {
+        print("pay...")
+        
+        self.useClient(reject: reject) { client in
+            
+            client.fetchShopName { shopName in
+                if let shopName = shopName {
+                    print(shopName)
+                    client.fetchCheckoutById(id: checkoutId) { checkout in
+                        if let checkout = checkout {
+
+                        }
+                    }
+                } else {
+                    reject("E_SHOP_NAME", "Can't get shopName", nil)
+                }
+            }
+        }
+    }
+    
+    func paySession(_ paySession: PaySession, didRequestShippingRatesFor address: PayPostalAddress, checkout: PayCheckout, provide: @escaping (PayCheckout?, [PayShippingRate]) -> Void) {
+        print("didSelectShippingRate...")
+    }
+    
+    func paySession(_ paySession: PaySession, didUpdateShippingAddress address: PayPostalAddress, checkout: PayCheckout, provide: @escaping (PayCheckout?) -> Void) {
+        print("didAuthorizePayment...")
+    }
+    
+    func paySession(_ paySession: PaySession, didSelectShippingRate shippingRate: PayShippingRate, checkout: PayCheckout, provide: @escaping (PayCheckout?) -> Void) {
+        print("didRequestShippingRates...")
+    }
+    
+    func paySession(_ paySession: PaySession, didAuthorizePayment authorization: PayAuthorization, checkout: PayCheckout, completeTransaction: @escaping (PaySession.TransactionStatus) -> Void) {
+        print("didUpdateShippingAddress...")
+    }
+    
+    func paySessionDidFinish(_ paySession: PaySession) {
+        print("didFinish...")
+    }
+
 }
