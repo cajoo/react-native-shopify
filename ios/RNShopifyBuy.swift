@@ -76,9 +76,10 @@ class RNShopifyBuy: NSObject, PaySessionDelegate {
         }
     }
     
-    @objc(applePay:resolver:rejecter:)
+    @objc(applePay:checkoutIDParameter:resolver:rejecter:)
     func applePay(
-        _ checkoutId: String,
+        _ merchantID: String,
+        checkoutID: String,
         resolve: @escaping RCTPromiseResolveBlock,
         reject: @escaping RCTPromiseRejectBlock
     ) -> Void {
@@ -89,9 +90,23 @@ class RNShopifyBuy: NSObject, PaySessionDelegate {
             client.fetchShopName { shopName in
                 if let shopName = shopName {
                     print(shopName)
-                    client.fetchCheckoutById(id: checkoutId) { checkout in
+                    client.fetchCheckoutById(id: checkoutID) { checkout in
                         if let checkout = checkout {
+                            let countryCode = checkout.shippingAddress?.countryCodeV2?.rawValue ?? "FR"
+                            let payCurrency = PayCurrency(currencyCode: checkout.currencyCode.rawValue, countryCode: countryCode)
+                            let paySession = PaySession(shopName: shopName, checkout: checkout.payCheckout, currency: payCurrency, merchantID: merchantID)
+                            
+                            print(checkout.payCheckout)
 
+                            paySession.delegate = self
+
+                            self.paySession = paySession
+
+                            paySession.authorize()
+                            
+                            resolve(nil)
+                        } else {
+                            reject("E_CHECKOUT", "Can't find checkout with this id", nil)
                         }
                     }
                 } else {

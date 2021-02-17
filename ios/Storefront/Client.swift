@@ -55,6 +55,7 @@ final class Client {
         let query = ClientQuery.queryForCheckout(id: GraphQL.ID(rawValue: id))
         let task  = self.client.queryGraphWith(query) { query, error in
             if let query = query {
+                print(query)
                 completion(query.node as? Storefront.Checkout)
             } else {
                 print("Failed to fetch checkout: \(String(describing: error))")

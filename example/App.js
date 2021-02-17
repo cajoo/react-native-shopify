@@ -9,7 +9,7 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View, Alert } from 'react-native';
 import ShopifyBuy from 'react-native-shopify-buy';
 
 export default class App extends Component<{}> {
@@ -18,7 +18,7 @@ export default class App extends Component<{}> {
     message: '--'
   };
   componentDidMount() {
-    ShopifyBuy.initialize('magrinj.myshopify.com', '06245c55e4fa977ac0de4163c0d181b4', 'fr-FR');
+    ShopifyBuy.initialize('eggz-fr.myshopify.com', '4249d2e3a3c6bd87227005de5561856a', 'fr-FR');
 
     ShopifyBuy.creditCardVault({
       firstName: 'Bob',
@@ -32,6 +32,10 @@ export default class App extends Component<{}> {
     }).catch((err) => {
       console.log('ERROR: ', err);
     })
+
+    setTimeout(() => {
+      ShopifyBuy.applePay('merchant.com.cajoo.cajoo', 'Z2lkOi8vc2hvcGlmeS9DaGVja291dC80MzI0NTJlODRmNWQ2MWU4Y2E4YWFlNjM1YzFlNTQ3OD9rZXk9ODlkMmFmM2E1MzI0MTRiMzliNThjZTA4MGJiN2U3Mjg=')
+    }, 1500);
     // RNShopifyBuy.test();
     /* RNShopifyBuy.sampleMethod('Testing', 123, (message) => {
       this.setState({

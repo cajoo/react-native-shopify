@@ -12,6 +12,13 @@
 		897881B425DC78970079E390 /* Fragment+CheckoutQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897881B325DC78970079E390 /* Fragment+CheckoutQuery.swift */; };
 		897881E825DC798D0079E390 /* Fragment+DiscountAllocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897881E725DC798D0079E390 /* Fragment+DiscountAllocation.swift */; };
 		897881EB25DC79D40079E390 /* Fragment+DiscountApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897881EA25DC79D40079E390 /* Fragment+DiscountApplication.swift */; };
+		899D0DE725DD8F17006DF359 /* Extension+AppliedGiftCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D0DE625DD8F17006DF359 /* Extension+AppliedGiftCard.swift */; };
+		899D0DEB25DD8F3B006DF359 /* Extension+MailingAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D0DEA25DD8F3B006DF359 /* Extension+MailingAddress.swift */; };
+		899D0DEE25DD8F66006DF359 /* Extension+ShippingRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D0DED25DD8F66006DF359 /* Extension+ShippingRate.swift */; };
+		899D0DF125DD8F86006DF359 /* Extension+CheckoutLineItemEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D0DF025DD8F86006DF359 /* Extension+CheckoutLineItemEdge.swift */; };
+		899D0DF425DD8FA7006DF359 /* Extension+DiscountApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D0DF325DD8FA7006DF359 /* Extension+DiscountApplication.swift */; };
+		899D0DF825DD8FD1006DF359 /* Extension+DiscountAllocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D0DF725DD8FD1006DF359 /* Extension+DiscountAllocation.swift */; };
+		899D0DFC25DD8FF0006DF359 /* Extension+Checkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D0DFB25DD8FF0006DF359 /* Extension+Checkout.swift */; };
 		89D3C97825DC345C00E9D462 /* RNShopifyBuy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3C97625DC345C00E9D462 /* RNShopifyBuy.swift */; };
 		89D3C97925DC345C00E9D462 /* RNShopifyBuyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D3C97725DC345C00E9D462 /* RNShopifyBuyManager.m */; };
 /* End PBXBuildFile section */
@@ -35,6 +42,13 @@
 		897881B325DC78970079E390 /* Fragment+CheckoutQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fragment+CheckoutQuery.swift"; sourceTree = "<group>"; };
 		897881E725DC798D0079E390 /* Fragment+DiscountAllocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fragment+DiscountAllocation.swift"; sourceTree = "<group>"; };
 		897881EA25DC79D40079E390 /* Fragment+DiscountApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fragment+DiscountApplication.swift"; sourceTree = "<group>"; };
+		899D0DE625DD8F17006DF359 /* Extension+AppliedGiftCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+AppliedGiftCard.swift"; sourceTree = "<group>"; };
+		899D0DEA25DD8F3B006DF359 /* Extension+MailingAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+MailingAddress.swift"; sourceTree = "<group>"; };
+		899D0DED25DD8F66006DF359 /* Extension+ShippingRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+ShippingRate.swift"; sourceTree = "<group>"; };
+		899D0DF025DD8F86006DF359 /* Extension+CheckoutLineItemEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+CheckoutLineItemEdge.swift"; sourceTree = "<group>"; };
+		899D0DF325DD8FA7006DF359 /* Extension+DiscountApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+DiscountApplication.swift"; sourceTree = "<group>"; };
+		899D0DF725DD8FD1006DF359 /* Extension+DiscountAllocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+DiscountAllocation.swift"; sourceTree = "<group>"; };
+		899D0DFB25DD8FF0006DF359 /* Extension+Checkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Checkout.swift"; sourceTree = "<group>"; };
 		89D3C97225DC325600E9D462 /* RNShopifyBuy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNShopifyBuy-Bridging-Header.h"; sourceTree = "<group>"; };
 		89D3C97625DC345C00E9D462 /* RNShopifyBuy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNShopifyBuy.swift; sourceTree = "<group>"; };
 		89D3C97725DC345C00E9D462 /* RNShopifyBuyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNShopifyBuyManager.m; sourceTree = "<group>"; };
@@ -62,8 +76,7 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				8912B09B25DC848B00B8E019 /* ClientQuery.swift */,
-				8912B09825DC838700B8E019 /* Client.swift */,
+				899D0DF625DD8FB0006DF359 /* Buy */,
 				897881AD25DC78000079E390 /* Storefront */,
 				89D3C97625DC345C00E9D462 /* RNShopifyBuy.swift */,
 				89D3C97725DC345C00E9D462 /* RNShopifyBuyManager.m */,
@@ -75,11 +88,27 @@
 		897881AD25DC78000079E390 /* Storefront */ = {
 			isa = PBXGroup;
 			children = (
+				8912B09825DC838700B8E019 /* Client.swift */,
+				8912B09B25DC848B00B8E019 /* ClientQuery.swift */,
 				897881B325DC78970079E390 /* Fragment+CheckoutQuery.swift */,
 				897881E725DC798D0079E390 /* Fragment+DiscountAllocation.swift */,
 				897881EA25DC79D40079E390 /* Fragment+DiscountApplication.swift */,
+				899D0DE625DD8F17006DF359 /* Extension+AppliedGiftCard.swift */,
+				899D0DEA25DD8F3B006DF359 /* Extension+MailingAddress.swift */,
+				899D0DED25DD8F66006DF359 /* Extension+ShippingRate.swift */,
+				899D0DF025DD8F86006DF359 /* Extension+CheckoutLineItemEdge.swift */,
+				899D0DF725DD8FD1006DF359 /* Extension+DiscountAllocation.swift */,
+				899D0DFB25DD8FF0006DF359 /* Extension+Checkout.swift */,
 			);
 			path = Storefront;
+			sourceTree = "<group>";
+		};
+		899D0DF625DD8FB0006DF359 /* Buy */ = {
+			isa = PBXGroup;
+			children = (
+				899D0DF325DD8FA7006DF359 /* Extension+DiscountApplication.swift */,
+			);
+			path = Buy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +170,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				89D3C97825DC345C00E9D462 /* RNShopifyBuy.swift in Sources */,
+				899D0DEB25DD8F3B006DF359 /* Extension+MailingAddress.swift in Sources */,
+				899D0DF125DD8F86006DF359 /* Extension+CheckoutLineItemEdge.swift in Sources */,
 				8912B09C25DC848B00B8E019 /* ClientQuery.swift in Sources */,
+				899D0DEE25DD8F66006DF359 /* Extension+ShippingRate.swift in Sources */,
 				8912B09925DC838700B8E019 /* Client.swift in Sources */,
 				89D3C97925DC345C00E9D462 /* RNShopifyBuyManager.m in Sources */,
+				899D0DF425DD8FA7006DF359 /* Extension+DiscountApplication.swift in Sources */,
+				899D0DF825DD8FD1006DF359 /* Extension+DiscountAllocation.swift in Sources */,
+				899D0DFC25DD8FF0006DF359 /* Extension+Checkout.swift in Sources */,
 				897881B425DC78970079E390 /* Fragment+CheckoutQuery.swift in Sources */,
+				899D0DE725DD8F17006DF359 /* Extension+AppliedGiftCard.swift in Sources */,
 				897881E825DC798D0079E390 /* Fragment+DiscountAllocation.swift in Sources */,
 				897881EB25DC79D40079E390 /* Fragment+DiscountApplication.swift in Sources */,
 			);
