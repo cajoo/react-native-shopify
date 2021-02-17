@@ -1,9 +1,10 @@
 #import <React/RCTBridgeModule.h>
+#import <React/RCTEventEmitter.h>
 
-@interface RCT_EXTERN_MODULE(RNShopifyBuy, NSObject)
+@interface RCT_EXTERN_MODULE(RNShopifyBuy, RCTEventEmitter)
 
 RCT_EXTERN_METHOD(initialize:(NSString)shopDomain accessTokenParameter:(NSString)accessToken localeParameter:(NSString)locale)
 RCT_EXTERN_METHOD(creditCardVault:(NSDictionary *)cardDictionary resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
-RCT_EXTERN_METHOD(applePay:(NSString)merchantID checkoutIDParameter:(NSString)checkoutID resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXTERN_METHOD(pay:(NSString)merchantID checkoutIDParameter:(NSString)checkoutID resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 
 @end

@@ -20,3 +20,12 @@ extension Storefront.ShippingRate {
     }
 
 }
+
+extension Array where Element == Storefront.ShippingRate {
+
+    var payShippingRates: [PayShippingRate] {
+        return self.map {
+            $0.payShippingRate
+        }
+    }
+}

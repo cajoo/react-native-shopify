@@ -19,6 +19,7 @@
 		899D0DF425DD8FA7006DF359 /* Extension+DiscountApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D0DF325DD8FA7006DF359 /* Extension+DiscountApplication.swift */; };
 		899D0DF825DD8FD1006DF359 /* Extension+DiscountAllocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D0DF725DD8FD1006DF359 /* Extension+DiscountAllocation.swift */; };
 		899D0DFC25DD8FF0006DF359 /* Extension+Checkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D0DFB25DD8FF0006DF359 /* Extension+Checkout.swift */; };
+		899D0E8D25DDC5EF006DF359 /* Fragment+PaymentQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D0E8C25DDC5EF006DF359 /* Fragment+PaymentQuery.swift */; };
 		89D3C97825DC345C00E9D462 /* RNShopifyBuy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3C97625DC345C00E9D462 /* RNShopifyBuy.swift */; };
 		89D3C97925DC345C00E9D462 /* RNShopifyBuyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D3C97725DC345C00E9D462 /* RNShopifyBuyManager.m */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,7 @@
 		899D0DF325DD8FA7006DF359 /* Extension+DiscountApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+DiscountApplication.swift"; sourceTree = "<group>"; };
 		899D0DF725DD8FD1006DF359 /* Extension+DiscountAllocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+DiscountAllocation.swift"; sourceTree = "<group>"; };
 		899D0DFB25DD8FF0006DF359 /* Extension+Checkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Checkout.swift"; sourceTree = "<group>"; };
+		899D0E8C25DDC5EF006DF359 /* Fragment+PaymentQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fragment+PaymentQuery.swift"; sourceTree = "<group>"; };
 		89D3C97225DC325600E9D462 /* RNShopifyBuy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNShopifyBuy-Bridging-Header.h"; sourceTree = "<group>"; };
 		89D3C97625DC345C00E9D462 /* RNShopifyBuy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNShopifyBuy.swift; sourceTree = "<group>"; };
 		89D3C97725DC345C00E9D462 /* RNShopifyBuyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNShopifyBuyManager.m; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				897881B325DC78970079E390 /* Fragment+CheckoutQuery.swift */,
 				897881E725DC798D0079E390 /* Fragment+DiscountAllocation.swift */,
 				897881EA25DC79D40079E390 /* Fragment+DiscountApplication.swift */,
+				899D0E8C25DDC5EF006DF359 /* Fragment+PaymentQuery.swift */,
 				899D0DE625DD8F17006DF359 /* Extension+AppliedGiftCard.swift */,
 				899D0DEA25DD8F3B006DF359 /* Extension+MailingAddress.swift */,
 				899D0DED25DD8F66006DF359 /* Extension+ShippingRate.swift */,
@@ -169,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				899D0E8D25DDC5EF006DF359 /* Fragment+PaymentQuery.swift in Sources */,
 				89D3C97825DC345C00E9D462 /* RNShopifyBuy.swift in Sources */,
 				899D0DEB25DD8F3B006DF359 /* Extension+MailingAddress.swift in Sources */,
 				899D0DF125DD8F86006DF359 /* Extension+CheckoutLineItemEdge.swift in Sources */,
