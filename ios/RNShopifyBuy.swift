@@ -9,6 +9,7 @@ class RNShopifyBuy: RCTEventEmitter, PaySessionDelegate {
 
     private var client: Client? = nil
     private var paySession: PaySession? = nil
+    private var merchantID: String? = nil
     
     @objc override static func requiresMainQueueSetup() -> Bool {
         return true
@@ -17,10 +18,15 @@ class RNShopifyBuy: RCTEventEmitter, PaySessionDelegate {
     /**
      * Initialize shopify graph client
      */
-    @objc(initialize:accessTokenParameter:localeParameter:)
-    func initialize(_ shopDomain: String, accessToken: String, locale: String) {
+    @objc(initialize:)
+    func initialize(_ settings: Dictionary<String, Any>) {
         // Create graph client
-        self.client = Client(shopDomain: shopDomain, accessToken: accessToken, locale: Locale.init(identifier: locale))
+        if let shopDomain = settings["shopDomain"] as? String, let accessToken = settings["accessToken"] as? String, let locale = settings["locale"] as? String {
+            self.client = Client(shopDomain: shopDomain, accessToken: accessToken, locale: Locale.init(identifier: locale))
+        } else {
+            fatalError("All following parameters need to be provided to initialize client: shopDomain, accessToken, locale")
+        }
+        self.merchantID = settings["merchantID"] as? String
     }
     
     /**
@@ -80,10 +86,9 @@ class RNShopifyBuy: RCTEventEmitter, PaySessionDelegate {
         }
     }
     
-    @objc(pay:checkoutIDParameter:resolver:rejecter:)
+    @objc(pay:resolver:rejecter:)
     func pay(
-        _ merchantID: String,
-        checkoutID: String,
+        _ checkoutID: String,
         resolve: @escaping RCTPromiseResolveBlock,
         reject: @escaping RCTPromiseRejectBlock
     ) -> Void {
@@ -91,7 +96,7 @@ class RNShopifyBuy: RCTEventEmitter, PaySessionDelegate {
             
             // Fetch Shopify shopName
             client.fetchShopName { shopName in
-                if let shopName = shopName {
+                if let shopName = shopName, let merchantID = self.merchantID {
                     
                     // Fetch checkout with the given ID
                     client.fetchCheckoutById(id: checkoutID) { checkout in
@@ -115,7 +120,7 @@ class RNShopifyBuy: RCTEventEmitter, PaySessionDelegate {
                         }
                     }
                 } else {
-                    reject("E_SHOP_NAME", "Can't get shopName", nil)
+                    reject("E_NOT_INITIALIZE", "Can't get shopName or merchantID", nil)
                 }
             }
         }

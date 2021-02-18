@@ -61,7 +61,12 @@ const _exampleCreditCard = {
 };
 
 // Initialize ShopifyBuy SDK
-ShopifyBuy.initialize(_shopDomain, _storefrontToken, _locale);
+ShopifyBuy.initialize({
+  shopDomain: _shopDomain,
+  accessToken: _storefrontToken,
+  locale: _locale,
+  merchantID: _merchantID,
+});
 
 Events.addListener(
   "didFinish",
@@ -81,7 +86,7 @@ const App = () => {
   }, []);
 
   const handlePayment = useCallback(() => {
-    RNShopifyBuy.pay(_merchantID, _checkoutID)
+    RNShopifyBuy.pay(_checkoutID)
       .then(() => console.log('SUCCESS'))
       .catch(() => console.log('ERROR'))
   });
