@@ -104,12 +104,5 @@ extension Storefront.CheckoutQuery {
             .amount()
             .currencyCode()
         }
-        .shippingLine { $0
-            .title()
-            .priceV2 { $0
-                .amount()
-                .currencyCode()
-            }
-        }
     }
 }

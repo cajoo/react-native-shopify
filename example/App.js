@@ -55,8 +55,8 @@ const _exampleCreditCard = {
   firstName: 'Bob',
   lastName: 'Norman',
   number: '4242424242424242',
-  expiryMonth: '12',
-  expiryYear: '2021',
+  expireMonth: '12',
+  expireYear: '2021',
   verificationCode: '123'
 };
 

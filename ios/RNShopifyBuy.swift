@@ -63,8 +63,8 @@ class RNShopifyBuy: RCTEventEmitter, PaySessionDelegate {
                 middleName: cardDictionary["middleName"] as? String,
                 lastName: cardDictionary["lastName"] as! String,
                 number: cardDictionary["number"] as! String,
-                expiryMonth: cardDictionary["expiryMonth"] as! String,
-                expiryYear: cardDictionary["expiryYear"] as! String,
+                expiryMonth: cardDictionary["expireMonth"] as! String,
+                expiryYear: cardDictionary["expireYear"] as! String,
                 verificationCode: cardDictionary["verificationCode"] as? String
             );
             
