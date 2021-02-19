@@ -186,7 +186,7 @@ class RNShopifyBuy: RCTEventEmitter, PaySessionDelegate {
 
         guard let email = authorization.shippingAddress.email else {
             print("Unable to update checkout email. Aborting transaction.")
-            self.sendEvent(withName: "didAuthorizePayment", body: ["status": "failed"])
+            self.sendEvent(withName: "didAuthorizePayment", body: "failed")
             completeTransaction(.failure)
             return
         }
@@ -196,7 +196,7 @@ class RNShopifyBuy: RCTEventEmitter, PaySessionDelegate {
             // Update complete shipping address
             client.updateCheckout(checkout.id, updatingCompleteShippingAddress: authorization.shippingAddress) { updatedCheckout in
                 guard let _ = updatedCheckout else {
-                    self.sendEvent(withName: "didAuthorizePayment", body: ["status": "failed"])
+                    self.sendEvent(withName: "didAuthorizePayment", body: "failed")
                     completeTransaction(.failure)
                     return
                 }
@@ -205,7 +205,7 @@ class RNShopifyBuy: RCTEventEmitter, PaySessionDelegate {
                 print("Updating checkout email...")
                 client.updateCheckout(checkout.id, updatingEmail: email) { updatedCheckout in
                     guard let _ = updatedCheckout else {
-                        self.sendEvent(withName: "didAuthorizePayment", body: ["status": "failed"])
+                        self.sendEvent(withName: "didAuthorizePayment", body: "failed")
                         completeTransaction(.failure)
                         return
                     }
@@ -216,11 +216,11 @@ class RNShopifyBuy: RCTEventEmitter, PaySessionDelegate {
                     client.completeCheckout(checkout, billingAddress: authorization.billingAddress, applePayToken: authorization.token, idempotencyToken: paySession.identifier) { payment in
                         if let payment = payment, checkout.paymentDue == payment.amountV2.amount {
                             print("Checkout completed successfully.")
-                            self.sendEvent(withName: "didAuthorizePayment", body: ["status": "success"])
+                            self.sendEvent(withName: "didAuthorizePayment", body: "success")
                             completeTransaction(.success)
                         } else {
                             print("Checkout failed to complete.")
-                            self.sendEvent(withName: "didAuthorizePayment", body: ["status": "failed"])
+                            self.sendEvent(withName: "didAuthorizePayment", body: "failed")
                             completeTransaction(.failure)
                         }
                     }

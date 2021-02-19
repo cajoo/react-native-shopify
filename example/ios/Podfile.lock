@@ -454,7 +454,7 @@ SPEC CHECKSUMS:
   React-jsi: a0418934cf48f25b485631deb27c64dc40fb4c31
   React-jsiexecutor: 93bd528844ad21dc07aab1c67cb10abae6df6949
   React-jsinspector: 58aef7155bc9a9683f5b60b35eccea8722a4f53a
-  react-native-shopify-buy: 5480dd86ff14e30cc22393ed9bec58842c855bea
+  react-native-shopify-buy: 518b72dbdd52e5fbbdd7b02f1ea3876f6ea710e9
   React-RCTActionSheet: 89a0ca9f4a06c1f93c26067af074ccdce0f40336
   React-RCTAnimation: 1bde3ecc0c104c55df246eda516e0deb03c4e49b
   React-RCTBlob: a97d378b527740cc667e03ebfa183a75231ab0f0
@@ -468,6 +468,6 @@ SPEC CHECKSUMS:
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 7c2d63b8c8db1843201ee4c650e99ea7a4bb9e27
+PODFILE CHECKSUM: 37db260e3348bdad55f286cdffa4e2f45396b50a
 
 COCOAPODS: 1.10.1

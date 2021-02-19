@@ -22,5 +22,8 @@ extension Storefront.DiscountApplicationQuery {
         .onScriptDiscountApplication { $0
             .title()
         }
+        .onAutomaticDiscountApplication { $0
+            .title()
+        }
     }
 }

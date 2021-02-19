@@ -3,16 +3,13 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '12.0'
 
-target 'example' do
+target 'ShopifyBuyExample' do
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
 
-  target 'exampleTests' do
-    inherit! :complete
-    # Pods for testing
-  end
-
+  pod 'react-native-shopify-buy', :path => '../..'
+  
   # Enables Flipper.
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work and
@@ -21,14 +18,5 @@ target 'example' do
   use_flipper!({ 'Flipper-Folly' => '2.3.0' })
   post_install do |installer|
     flipper_post_install(installer)
-  end
-end
-
-target 'example-tvOS' do
-  # Pods for example-tvOS
-
-  target 'example-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
   end
 end

@@ -18,6 +18,8 @@ extension DiscountApplication {
             return discount.title
         case let discount as Storefront.ScriptDiscountApplication:
             return discount.title
+        case let discount as Storefront.AutomaticDiscountApplication:
+            return discount.title
         default:
             fatalError("Unsupported DiscountApplication type: \(type(of: self))")
         }
