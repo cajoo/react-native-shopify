@@ -3,6 +3,7 @@
  */
 
 import MobileBuySDK
+import PassKit
 
 @objc(RNShopifyBuy)
 class RNShopifyBuy: RCTEventEmitter, PaySessionDelegate {
@@ -13,6 +14,13 @@ class RNShopifyBuy: RCTEventEmitter, PaySessionDelegate {
     
     @objc override static func requiresMainQueueSetup() -> Bool {
         return true
+    }
+    
+    /**
+     * Constants
+     */
+    @objc override func constantsToExport() -> [AnyHashable: Any]! {
+      return ["canMakePayments": PKPaymentAuthorizationController.canMakePayments()]
     }
     
     /**

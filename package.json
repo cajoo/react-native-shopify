@@ -1,6 +1,6 @@
 {
   "name": "react-native-shopify-buy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shopify mobile-sdk bridge for react-native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

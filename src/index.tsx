@@ -34,6 +34,8 @@ type EventName = 'didAuthorizePayment' | 'didFinish';
 type PaymentStatus = 'success' | 'failed';
 
 export default {
+  canMakePayments: RNShopifyBuy.canMakePayments as boolean,
+
   /**
    * Initialize Shopify mobile-sdk
    * iOS/Android

@@ -131,6 +131,9 @@ const App = () => {
       <Text
         style={[styles.data, styles.event]}
       >{`didFinish: ${finish.toString()}`}</Text>
+      <Text
+        style={[styles.data, styles.event]}
+      >{`canMakePayments: ${ShopifyBuy.canMakePayments}`}</Text>
     </View>
   );
 };
